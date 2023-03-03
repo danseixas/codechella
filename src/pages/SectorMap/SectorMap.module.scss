@@ -1,0 +1,219 @@
+@import './../../styles/variables';
+
+.sectors {
+    &__map {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+
+        &__image {
+            width: 360px;
+            height: 360px;
+        }
+
+        &__description {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 24px;
+
+            &__title {
+                font-family: $first-font;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 40px;
+
+                /* identical to box height, or 200% */
+                display: flex;
+                align-items: center;
+                text-align: center;
+
+                /* Cinza */
+                color: $text_color;
+            }
+
+            &__item {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 0px;
+                gap: 16px;
+
+                &__rectangle {
+                    width: 32px;
+                    height: 32px;
+
+                    // background: #0E7DF1;
+                }
+
+                &__text {
+                    /* P */
+                    font-family: $first-font;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 40px;
+
+                    /* identical to box height, or 200% */
+                    display: flex;
+                    align-items: center;
+
+                    /* Cinza */
+                    color: $text_color;
+                }
+            }
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 32px 24px;
+        gap: 32px;
+
+        &__title {
+            /* H6 */
+            font-family: $first-font;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 38px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            /* Cinza */
+            color: $text_color;
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            gap: 32px;
+
+            &__sector {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0px;
+                gap: 24px;
+
+                &__rectangle {
+                    display: none;
+                }
+
+                &__image {
+                    height: 239px;
+                    width: 100%;
+                    object-fit: cover;
+                    border-radius: 16px;
+                }
+
+                &__title {
+                    /* H6 */
+                    font-family: $first-font;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 32px;
+                    line-height: 38px;
+
+                    /* identical to box height */
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+
+                    /* Cinza */
+                    color: $text_color;
+                }
+
+                &__text {
+                    /* P */
+                    font-family: $first-font;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 40px;
+
+                    /* or 200% */
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+
+                    /* Cinza */
+                    color: $text_color;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $tablet-min-width) {
+    .sectors {
+        &__map {
+            padding: 32px 60px;
+            gap: 32px;
+
+            &__image {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__info {
+            padding: 32px 60px;
+
+            &__title {
+                font-size: 40px;
+                line-height: 47px;
+            }
+
+            &__container {
+                &__sector {
+                    &__image {
+                        width: 382.4px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $desktop-min-width) {
+    .sectors {
+        &__map {
+            gap: 80px;
+            flex-direction: row;
+
+            &__image {
+                height: 609px;
+                width: 690px;
+            }
+        }
+
+        &__info {
+            padding: 48px 120px;
+
+            &__container {
+                flex-direction: row;
+                gap: 24px;
+
+                &__sector {
+                    width: 33%;
+                    
+                    &__rectangle {
+                        width: 393px;
+                        height: 82px;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

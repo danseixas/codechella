@@ -1,13 +1,92 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--header-background: #2E7BA2;
+	--header-background-hover: #519EC5;
+	--color-background: linear-gradient(180deg, #BFDAE6 0%, #FCF0DD 50%, #FACF9D 100%);
+	--footer-background: #FACF9D;
+	--text-color: #444444;
+	--lineup-background-color: #DF9010;
+
+	background: var(--color-background);
+}
+
+[data-theme='dark'] {
+	--header-background: #4650BD;
+	--header-background-hover: #606ADA;
+	--color-background: linear-gradient(180deg, #304968 0%, #36C1A0 52.6%, #4650BD 100%);
+	--footer-background: #4650BD;
+	--text-color: white;
+	--lineup-background-color: #008364;
+
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	--fonte-primaria: 'Raleway';
+	--secondary-font: 'Calistoga';
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
+}
+
+p {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 40px;
+
+	/* identical to box height, or 200% */
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+h6 {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 700 !important;
+	font-size: 20px !important;
+	line-height: 40px;
+
+	/* identical to box height, or 200% */
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+h5 {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 700 !important;
+	font-size: 32px !important;
+	line-height: 38px;
+
+	/* identical to box height, or 200% */
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+h3 {
+	font-family: 'Calistoga';
+	font-style: normal;
+	font-weight: 400 !important;
+	font-size: 48px !important;
+	line-height: 62px;
+	display: flex;
+	align-items: center;
+	text-align: center;
 }

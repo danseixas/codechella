@@ -1,0 +1,118 @@
+@import './../../styles/variables';
+// @import '/src/styles/themeVariables.scss';
+@import '../../styles/themeVariables.scss';
+
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 32px 24px 32px 24px;
+	width: 100%;
+
+	flex-wrap: wrap;
+
+	background-color: var(--header-background);
+
+	@include themify($themes) {
+		background-color: themed('headerBackground');
+	}
+
+	&__menuButton {
+		background-color: var(--header-background);
+		padding: 0;
+		border: 0;
+
+		&__image {
+			width: 32px;
+		}
+	}
+
+	&__menu {
+		display: none;
+		flex-direction: column;
+		justify-content: center;
+		padding: 16px;
+		width: 100%;
+
+		&__link {
+			list-style-type: none;
+			display: flex;
+			padding: 0 0 16px 0;
+
+			a {
+				color: $header_text_color;
+				text-decoration: none;
+				width: 100%;
+
+				h6 {
+					justify-content: center;
+					text-align: center;
+				}
+			}
+		}
+
+		&__link+&__link {
+			border-top: 1px solid $header_text_color;
+			padding: 16px 0 16px 0;
+		}
+	}
+
+	&__menu:last-child {
+		padding: 16px 0 0 0;
+	}
+
+	&__menuButtonClicked {
+		display: flex;
+	}
+}
+
+@media (min-width: $tablet-min-width) {
+	.header {
+		flex-direction: column;
+		justify-content: center;
+		padding: 32px 60px;
+		gap: 32px;
+
+		&__menuButton {
+			display: none;
+		}
+
+		&__menu {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-start;
+			padding: 0;
+			gap: 32px;
+
+			&__link+&__link {
+				border-top: 0px;
+				padding: 0;
+			}
+
+			&__link {
+				padding: 0;
+			}
+		}
+
+		&__menu:last-child {
+			padding: 0;
+		}
+	}
+}
+
+@media (min-width: $desktop-min-width) {
+	.header {
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding: 32px 120px;
+
+		flex-wrap: nowrap;
+
+		&__menu {
+			justify-content: flex-end;
+		}
+	}
+}
