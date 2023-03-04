@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom'
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer'
 import Navigation from './components/Navigation'
 import Home from './pages/Home'
@@ -20,29 +20,15 @@ export default function AppRouter() {
 			<Router>
 				<Navigation />
 				<Routes>
-					<Route path='/' element={<Index />} />
-					<Route path='/codechella'>
-						<Route index element={<Home />} />
-						<Route path='experience' element={<Experience />} />
-						<Route path='sectormap' element={<SectorMap />} />
-						<Route path='info' element={<Information />} />
-						<Route path='ticket' element={<Ticket />} />
-						<Route path='ticket-confirmation' element={<TicketConfirmation />} />
-					</Route>
+					<Route path='/' element={<Home />} />
+					<Route path='/experience' element={<Experience />} />
+					<Route path='/sectormap' element={<SectorMap />} />
+					<Route path='/info' element={<Information />} />
+					<Route path='/ticket' element={<Ticket />} />
+					<Route path='/ticket-confirmation' element={<TicketConfirmation />} />
 				</Routes>
 				<Footer />
 			</Router>
 		</main>
 	)
-}
-
-// component used only to redirect the path "/" to "/codechella" (needed to use github.io)
-function Index() {
-	const navigate = useNavigate()
-
-	useEffect(() => {
-		navigate('/codechella', { replace: true })
-	}, [])
-
-	return <div>Redirecting...</div>
 }
