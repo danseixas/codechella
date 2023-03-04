@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/codechella/static/css/main.aac766a9.css",
+    "main.js": "/codechella/static/js/main.e34e4933.js",
+    "static/media/pista.jpg": "/codechella/static/media/pista.40aa6c47342298313e4d.jpg",
+    "static/media/AboutDarkTheme.jpg": "/codechella/static/media/AboutDarkTheme.a75d1aefdca681ece7c4.jpg",
+    "static/media/AboutLightTheme.jpg": "/codechella/static/media/AboutLightTheme.27c46c750a830f36c9cb.jpg",
+    "static/media/cadeiras.jpg": "/codechella/static/media/cadeiras.907ec08596dadc04cc7f.jpg",
+    "static/media/pista-premium.jpg": "/codechella/static/media/pista-premium.f2441bd45eb191481101.jpg",
+    "static/media/experience3.jpg": "/codechella/static/media/experience3.3f6fda85fa5781343fca.jpg",
+    "static/media/experience1.jpg": "/codechella/static/media/experience1.8edc25177f673ddc1758.jpg",
+    "static/media/experience2.jpg": "/codechella/static/media/experience2.286e8cf8f0c3ed79a428.jpg",
+    "static/media/mapa-setores.png": "/codechella/static/media/mapa-setores.87eedf9062a2bb1dd07a.png",
+    "index.html": "/codechella/index.html",
+    "main.aac766a9.css.map": "/codechella/static/css/main.aac766a9.css.map",
+    "main.e34e4933.js.map": "/codechella/static/js/main.e34e4933.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aac766a9.css",
+    "static/js/main.e34e4933.js"
+  ]
+}
