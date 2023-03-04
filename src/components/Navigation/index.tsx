@@ -11,19 +11,19 @@ export default function Navigation() {
 	const routes = [
 		{
 			label: 'A experiência',
-			to: '/experience'
+			to: '/codechella/experience'
 		},
 		{
 			label: 'Mapa de Setores',
-			to: 'sectormap'
+			to: '/codechella/sectormap'
 		},
 		{
 			label: 'Informações',
-			to: '/info'
+			to: '/codechella/info'
 		},
 		{
 			label: 'Ingresso',
-			to: '/ticket'
+			to: '/codechella/ticket'
 		}
 	]
 
@@ -37,7 +37,7 @@ export default function Navigation() {
 
 	return (
 		<header className={styles.header}>
-			<Link to={'/'}>
+			<Link to={'/codechella'}>
 				<img src={logo} alt="Logo do Codechella" />
 			</Link>
 			<button onClick={clickMenuButton} className={styles.header__menuButton}>
