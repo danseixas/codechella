@@ -1,0 +1,137 @@
+@import './../../styles/variables';
+
+.info {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    &__section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 48px 24px;
+        gap: 48px;
+
+        &__title {
+            font-family: var(--secondary-font);
+            font-style: normal;
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 42px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: var(--text-color);
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0;
+            gap: 24px;
+            width: 100%;
+
+            &__dropdown {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0;
+                width: 100%;
+
+                &__question {
+                    display: flex;
+                    flex-direction: column;
+                    // row-gap: 16px;
+                    justify-content: space-between;
+                    align-items: center;
+                    // padding: 16px;
+                    width: 100%;
+
+                    background: var(--header-background);
+
+                    &__button {
+                        display: none;
+                    }
+
+                    &__icon {
+                        width: 24px;
+                        height: 24px;
+                        background-image: url("../../assets/arrow_drop_down.png");
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        display: inline-block;
+                    }
+
+                    &__button:checked~&__label>&__icon {
+                        background-image: url('../../assets/arrow_drop_up.png')
+                    }
+
+                    &__button:checked~&__answer {
+                        display: flex;
+                    }
+
+                    &__label {
+                        display: flex;
+                        align-items: center;
+                        padding: 16px;
+                        width: 100%;
+                        justify-content: space-between;
+                    }
+
+                    &__text {
+                        font-family: var(--primary-font);
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 32px;
+                        line-height: 38px;
+
+                        display: flex;
+                        align-items: center;
+                        text-align: start;
+
+                        color: var(--text-color);
+                    }
+
+                    &__answer {
+                        padding: 16px;
+                        font-family: var(--primary-font);
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 20px;
+                        line-height: 40px;
+                        width: 100%;
+
+                        display: none;
+                        align-items: center;
+                        text-align: start;
+
+                        color: var(--dropdown-text-color);
+                        background: var(--dropdown-background-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $tablet-min-width) {
+    .info {
+        &__section {
+            padding: 48px 60px;
+        }
+    }
+}
+
+@media (min-width: $desktop-min-width) {
+    .info {
+        &__section {
+            padding: 48px 120px;
+
+            &__container {
+                width: 1000px;
+            }
+        }
+    }
+}

@@ -32,8 +32,10 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
-	--fonte-primaria: 'Raleway';
+	--primary-font: 'Raleway';
 	--secondary-font: 'Calistoga';
+	--dropdown-text-color: #444444;
+	--dropdown-background-color: #C8DEEF;
 }
 
 code {

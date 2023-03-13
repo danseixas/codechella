@@ -15,7 +15,7 @@ import ttWhiteIcon from 'assets/tt_white.png'
 
 export default function Footer() {
 	const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-	const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light')
+	const [theme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light')
 
 	return (
 		<footer className={styles.footer}>
