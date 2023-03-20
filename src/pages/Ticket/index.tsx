@@ -35,20 +35,27 @@ export default function Ticket() {
 		return age >= 16
 	}
 
+	const isValidName = (name: string) => {
+		return name.length >= 10
+	}
+
 	const onSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
 
 		// check cpf, age and email before navigate
+		const validName = isValidName(name)
+		if (!validName) {
+			alert('Nome inválido')
+			return
+		}
 
 		const validCPF = isValidCPF(cpf)
-
 		if (!validCPF) {
 			alert('CPF inválido')
 			return
 		}
 
 		const validAge = isValidAge(new Date(birthDate))
-
 		if (!validAge) {
 			alert('Idade inválida')
 			return
