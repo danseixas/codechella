@@ -17,12 +17,44 @@ export default function Ticket() {
 	const [ticketType, setTicketType] = useState('')
 	const [ticketDate, setTicketDate] = useState('')
 
+	const isValidCPF = (cpf: string) => {
+		if (typeof cpf !== 'string') return false
+		cpf = cpf.replace(/[^\d]+/g, '')
+		if (cpf.length !== 11 || !!cpf.match(/(\d)\1{10}/)) return false
+		const cpfSplited = cpf.split('').map(el => +el)
+		const rest = (count: number) => (cpfSplited.slice(0, count - 12)
+			.reduce((soma, el, index) => (soma + el * (count - index)), 0) * 10) % 11 % 10
+		return rest(10) === cpfSplited[9] && rest(11) === cpfSplited[10]
+	}
+
+	const isValidAge = (birthdate: Date) => {
+		const timeDiff = Math.abs(Date.now() - birthdate.getTime())
+		const age = Math.floor((timeDiff / (1000 * 3600 * 24)) / 365.25)
+		console.log(age)
+
+		return age >= 16
+	}
+
 	const onSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
 
 		// check cpf, age and email before navigate
 
-		navigate('/ticket-confirmation', {state: {name: name, ticketType: ticketType, ticketDate: ticketDate}})
+		const validCPF = isValidCPF(cpf)
+
+		if (!validCPF) {
+			alert('CPF inválido')
+			return
+		}
+
+		const validAge = isValidAge(new Date(birthDate))
+
+		if (!validAge) {
+			alert('Idade inválida')
+			return
+		}
+
+		navigate('/ticket-confirmation', { state: { name: name, ticketType: ticketType, ticketDate: ticketDate } })
 
 		// console.log(name)
 		console.log(email)
@@ -56,20 +88,20 @@ export default function Ticket() {
 				<form className={styles.ticket__form} onSubmit={onSubmitForm}>
 					<div className={styles.ticket__form__field}>
 						<label className={styles.ticket__form__field__text}>Nome completo</label>
-						<input type='text' id='fullname' name='name' className={styles.ticket__form__field__value} required onChange={event => setName(event.target.value)}/>
+						<input type='text' id='fullname' name='name' className={styles.ticket__form__field__value} required onChange={event => setName(event.target.value)} />
 					</div>
 					<div className={styles.ticket__form__field}>
 						<label className={styles.ticket__form__field__text}>Email</label>
-						<input type='text' id='email' name='email' className={styles.ticket__form__field__value} required onChange={event => setEmail(event.target.value)}/>
+						<input type='text' id='email' name='email' className={styles.ticket__form__field__value} required onChange={event => setEmail(event.target.value)} />
 					</div>
 					<div className={styles.ticket__form__field}>
 						<label className={styles.ticket__form__field__text}>CPF</label>
-						<InputMask 
-							type='text' 
-							id='cpf' 
-							name='cpf' 
-							className={styles.ticket__form__field__value} 
-							required 
+						<InputMask
+							type='text'
+							id='cpf'
+							name='cpf'
+							className={styles.ticket__form__field__value}
+							required
 							onChange={event => setCPF(event.target.value)}
 							placeholder='___.___.___-__'
 							mask='999.999.999-99'
@@ -77,7 +109,7 @@ export default function Ticket() {
 					</div>
 					<div className={styles.ticket__form__field}>
 						<label className={styles.ticket__form__field__text}>Data de nascimento</label>
-						<input type='date' id='birthdate' name='birthdate' className={styles.ticket__form__field__value} required onChange={event => setBirthDate(event.target.value)}/>
+						<input type='date' id='birthdate' name='birthdate' className={styles.ticket__form__field__value} required onChange={event => setBirthDate(event.target.value)} />
 					</div>
 					<div className={styles.ticket__form__field}>
 						<label className={styles.ticket__form__field__text}>Tipo de ingresso</label>
